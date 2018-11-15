@@ -19,7 +19,15 @@ services:
       - 3000:3000
     depends_on:
       - db
-
+  front:
+    build: ./front
+    command: yarn start
+    environment:
+      PORT: 8000
+    volumes:
+      - ./front:/app
+    ports:
+      - 8000:8000
 volumes:
   postgres-data:
     driver: local
