@@ -22,12 +22,10 @@ services:
   front:
     build: ./front
     command: yarn start
-    environment:
-      PORT: 8000
     volumes:
       - ./front:/app
     ports:
-      - 8000:8000
+      - 8000:3000
 volumes:
   postgres-data:
     driver: local
